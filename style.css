@@ -1,0 +1,114 @@
+/* Abacus brand palette (from abacus-global.com) */
+:root {
+  --abacus-blue: #0b4ea2;
+  --abacus-navy: #011a3b;
+  --abacus-green: #4db848;
+  --abacus-lime: #8cc63f;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", "Open Sans", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 20%, var(--abacus-blue), var(--abacus-navy) 70%);
+}
+.card {
+  width: 640px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  border-bottom: 8px solid var(--abacus-green);
+  line-height: 3;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+.inside p {
+  color: var(--abacus-blue);
+  font-weight: 700;
+}
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  background-color: #ffffff;
+  border-bottom: 8px solid;
+  border-image: linear-gradient(to right, var(--abacus-lime), var(--abacus-green), var(--abacus-blue)) 1;
+}
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+.logo {
+  width: 240px;
+  height: auto;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+      bottom: 130px;
+
+}
+.outside p {
+  font-size: 23px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: var(--abacus-navy);
+}
+.inside h1 {
+  font-size: 120px;
+  line-height: 120px;
+}
+.inside img {
+  height: 303px;
+}
+p {
+  font-size: 30px;
+}
